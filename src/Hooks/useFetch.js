@@ -4,8 +4,6 @@ import { useEffect, useState } from 'react'
 export const useFetch = (url, customParams = {}) => {
 
   const [Data, setData] = useState([])
-
-  // console.log(typeof Data);
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
 

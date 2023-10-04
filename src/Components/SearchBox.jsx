@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useFetch } from '../Hooks/useFetch'
 import { useNavigate } from 'react-router-dom'
 
@@ -9,12 +9,22 @@ const SearchBox = () => {
 
     const [query, setQuery] = useState('')
 
-
-
-    const [data] = useFetch(`search/movie`, { query })
-
-    console.log(data);
+    const [defferedQuery, setDefferedQuery] = useState('')
+    const [data] = useFetch(`search/movie`, { query: defferedQuery })
     const { results } = data;
+
+    useEffect(() => {
+        let timer = setTimeout(() => {
+            setDefferedQuery(query)
+        }, 500)
+
+        return () => {
+            clearTimeout(timer)
+            console.log("re rendered");
+        }
+
+
+    }, [query])
 
     return (
         <div className='searchBox' >
