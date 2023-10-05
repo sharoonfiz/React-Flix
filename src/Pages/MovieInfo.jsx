@@ -1,6 +1,6 @@
-
-import { useParams } from 'react-router-dom'
 import { useFetch } from '../Hooks/useFetch'
+import { useParams } from 'react-router-dom'
+
 
 
 const MovieInfo = () => {

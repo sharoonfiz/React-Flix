@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react'
-import { useFetch } from '../Hooks/useFetch'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useFetch } from '../Hooks/useFetch'
 
 
 const SearchBox = () => {
@@ -10,7 +10,9 @@ const SearchBox = () => {
     const [query, setQuery] = useState('')
 
     const [defferedQuery, setDefferedQuery] = useState('')
+
     const [data] = useFetch(`search/movie`, { query: defferedQuery })
+
     const { results } = data;
 
     useEffect(() => {
