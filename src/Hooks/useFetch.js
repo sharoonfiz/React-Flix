@@ -1,11 +1,13 @@
 import axios from 'axios'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useMemo } from 'react'
 
 export const useFetch = (url, customParams = {}) => {
 
   const [Data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+
+  const { page, query } = customParams;
 
   const option = {
     method: "get",
@@ -18,7 +20,8 @@ export const useFetch = (url, customParams = {}) => {
     }
   }
 
-  const { page, query } = customParams;
+
+  const memoizedOptions = useMemo(() => option, [page, query, url]);
 
   useEffect(() => {
 
@@ -39,7 +42,7 @@ export const useFetch = (url, customParams = {}) => {
 
     fetchData()
 
-  }, [page, url, query])
+  }, [memoizedOptions])
 
 
   return [Data, loading, error]
