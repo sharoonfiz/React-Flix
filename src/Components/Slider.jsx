@@ -5,9 +5,7 @@ import { Link } from "react-router-dom";
 
 
 function Slider({ page }) {
-  // const [sliderImg, setSliderImg] = useState([]);
 
-  // console.log(sliderImg);  
 
   const [data] = useFetch('movie/now_playing', { page })
 
@@ -61,17 +59,3 @@ function Slider({ page }) {
 
 export default Slider;
 
-// useEffect(() => {
-//   const fetchData = async () => {
-//     let { data } = await axios({
-//       method: "get",
-//       url: "https://api.themoviedb.org/3/movie/now_playing",
-//       params: {
-//         api_key: "682d7961af84689049309c71f76b4eb1",
-//       },
-//     });
-//     setSliderImg(data.results);
-//   };
-
-//   fetchData();
-// }, []);

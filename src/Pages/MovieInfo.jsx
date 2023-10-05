@@ -8,14 +8,9 @@ const MovieInfo = () => {
     const params = useParams()
     const { id } = params
     console.log(id);
-    // console.log(id);
 
 
-
-    // console.log('movie', movieInfo);
-
-
-    const [data] = useFetch(`movie/${id}`) // doubt
+    const [data] = useFetch(`movie/${id}`)
 
     console.log(data);
 

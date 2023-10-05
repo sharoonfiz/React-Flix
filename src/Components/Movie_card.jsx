@@ -4,7 +4,7 @@ import FavouriteButton from "./FavouriteButton";
 
 function Moviecard({ movie }) {
 
-  // here we can do like this also ({movie : {id,title,rating,poster_path} })
+
 
   const { title, vote_average, poster_path, id } = movie;
 
@@ -16,7 +16,7 @@ function Moviecard({ movie }) {
       <Link to={`movie/${id}`}>
         <img
           className="moviePoster"
-          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}  // doubt why we have templete litreals in poster_path
+          src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
           alt=""
         />
       </Link>

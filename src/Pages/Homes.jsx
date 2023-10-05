@@ -1,4 +1,4 @@
-// import React from 'react'
+import React from 'react'
 import { useFetch } from '../Hooks/useFetch'
 import Slider from '../Components/Slider'
 import Wrapper from '../Components/Wrapper'
@@ -17,7 +17,7 @@ const Homes = () => {
 
     const [Data, loading, error] = useFetch('movie/popular', { page })
 
-    // console.log('dataaaa', Data);
+
 
     const { results, total_pages } = Data
 

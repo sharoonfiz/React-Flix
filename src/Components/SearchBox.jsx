@@ -55,19 +55,3 @@ const SearchBox = () => {
 
 export default SearchBox
 
-
-{/* <ul>
-{results?.map((search) => (
-    (
-
-        <li key={search.id} onClick={() => navigate(`movie/${search.id}`)}  >
-            <img src={`https://image.tmdb.org/t/p/w500/${search?.poster_path}`} alt="" />
-
-            <div>
-                <h4>{search?.title} </h4>
-                <p>{search?.release_date} </p>
-            </div>
-        </li>
-    )
-))}
-</ul> */}

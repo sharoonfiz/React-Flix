@@ -1,5 +1,5 @@
-import axios from 'axios'
-import { useEffect, useState, useMemo } from 'react'
+import { useEffect, useState, useMemo } from 'react';
+import axios from 'axios';
 
 export const useFetch = (url, customParams = {}) => {
 
@@ -11,9 +11,8 @@ export const useFetch = (url, customParams = {}) => {
 
   const option = {
     method: "get",
-    baseURL: "https://api.themoviedb.org/3/",    // this is base url
+    baseURL: "https://api.themoviedb.org/3/",
     url,
-    // this is sourse patch we set this as manually,becoz here using coustom hook we can change sourse path whenever we w
     params: {
       api_key: "682d7961af84689049309c71f76b4eb1",
       ...customParams,
